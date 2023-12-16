@@ -1,0 +1,18 @@
+<!-- plantillas/registration/login.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+<div class="bg-dark rounded-2 text-center text-info p-1">
+    <h2>Iniciar Sesión</h2>
+</div>
+
+<div class="container mt-4 bg-dark fs-5 p-4 rounded text-white">
+    <form class="mb-3" method="post"> {% csrf_token %}
+        {{ form|crispy }}
+        <p style="font-size: 13px; margin-bottom: 1rem;">* Campos obligatorios</p>
+        <button class="btn btn-success fs-5 d-grid gap-2 col-6 mx-auto" type="submit">Acceder</button>
+        <p class="text-center mt-3">¿No tienes una cuenta? <a href="{% url 'account_signup' %}" class="text-info">Registrate aquí</a></p>
+    </form>
+</div>
+{% endblock contenido %}

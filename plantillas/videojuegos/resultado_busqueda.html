@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+
+{% block contenido %}
+<h1>Resultados de búsqueda</h1>
+<div class="container text-center">
+    <div class="row gy-5">
+        {% for videojuego in lista_videojuegos %}
+        <div class="col-4">
+            <a href="{{ videojuego.get_absolute_url }}" class="nodecoration">
+                <div class="card p-3 noticias rounded-0">
+                    {% if videojuego.portada %}
+                    <img src="{{ videojuego.portada.url }}" class="border border-5 border-info rounded" alt="{{ videojuego.titulo }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="card-title h3__lista-videojuego">{{ videojuego.titulo }}</h3>
+                        <p class="precio">MXN ${{ videojuego.precio }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock contenido %}

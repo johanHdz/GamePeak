@@ -1,0 +1,6 @@
+.venv
+__python__/
+db.sqlite3
+.DS_Store
+.git
+archivosestaticos/

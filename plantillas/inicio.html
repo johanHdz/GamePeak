@@ -1,0 +1,151 @@
+<!-- plantillas/inicio.html -->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block contenido %}
+<h3>JUEGOS DESTACADOS Y RECOMENDADOS</h3>
+
+<div id="carouselVideojuegos" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="http://localhost:8000/videojuegos/e3467efe-a809-419e-8e55-0a29e34cff62/">
+                <img src="{% static 'images/RedDeadRedemption2.jpg' %}" class="d-block w-100"
+                    alt="Red Dead Redemption 2">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="http://localhost:8000/videojuegos/3487b134-3888-4883-86d1-b68f6e0f7f1c/">
+                <img src="{% static 'images/HollowKnight.jpg' %}" class="d-block w-100" alt="Hollow Knight">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="http://localhost:8000/videojuegos/4ef714bb-5307-4c37-83c4-f0a2b178bf0c/">
+                <img src="{% static 'images/BaldursGate3.jpg' %}" class="d-block w-100" alt="Baldur's Gate 3">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="http://localhost:8000/videojuegos/e478a3d6-1ffe-43c1-9144-3b48268e1f69/">
+                <img src="{% static 'images/Cyberpunk2077.jpg' %}" class="d-block w-100" alt="Cyberpunk2077">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="http://localhost:8000/videojuegos/3fdda883-e20c-4e11-b1cb-5efa1c7ce782/">
+                <img src="{% static 'images/GhostOfTsushima.jpg' %}" class="d-block w-100" alt="Ghost Of Tsushima">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="http://localhost:8000/videojuegos/9365727c-b003-4abe-955e-4ef891914030/">
+                <img src="{% static 'images/GrandTheftAutoIV.jpg' %}" class="d-block w-100" alt="Grand Theft Auto IV">
+            </a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselVideojuegos" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselVideojuegos" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+<div class="container noticias mt-5 rounded">
+    <div class="p-3 m-5">
+        <h2 class="text-center" style="color:#0dcaf0;">THE GAME AWARDS 2023: todos los ganadores de todas las
+            categorías (GOTY)</h2>
+        <p class="noticias mt-4">
+            ¡Ya sabemos quiénes son todos los ganadores de los premios de The Game of the Year 2023! Tras una
+            conferencia cargada de sorpresas y anuncios, se han revelado a todos y cada uno de los juegos premiados de
+            la noche.Ahora bien, somos conscientes de que no todo el mundo habrá podido seguir el evento y/o anotar
+            todos los premios. Es por eso mismo que hoy, en GamePeak, les traemos un resumen con todos y cada uno de
+            ellos ordenados por categoría.
+        </p>
+        <p class="noticias">
+            Las categorías son:
+        <ul class="text-white" style="font-size: 20px;">
+            <li>Juego del Año</li>
+            <li>Mejor Dirección</li>
+            <li>Mejor Narrativa</li>
+            <li>Mejor Dirección Artística</li>
+            <li>Mejor Banda Sonora y Música</li>
+            <li>Mejor Diseño de Audio</li>
+        </ul>
+        </p>
+    </div>
+</div>
+
+<div class="card mt-5 mb-5">
+    <div class="card-header text-center bg-black">
+        <h3 class="titulo">Ganador al premio Game Of The Year 2023</h3>
+    </div>
+    <div class="container text-center noticias rounded-bottom">
+        <div class="row">
+            <div class="col-4">
+                <img src="{% static 'images/Covers/BaldursGate3.jpg' %}" class="img-fluid img-thumbnail mt-3 mb-3">
+            </div>
+            <div class="col-8 mt-3">
+                <h1 style="color: white;">Baldur's Gate 3</h1>
+                <p class="noticias">
+                    Una vez más, The Game Awards nos ha dejado una noche repleta de anuncios, debates, comentarios y
+                    sorpresas. La que dice ser una de las galas más celebradas de la industria del videojuego lo ha
+                    vuelto a hacer y, como no podía ser de otra forma, ha escogido al que es --en teoría-- el Mejor
+                    Juego del Año 2023.
+                </p>
+                <p class="noticias">
+                    En efecto, Baldur's Gate 3 y Alan Wake 2 eran los preferidos del público y la crítica para alzarse
+                    con el premio. El primero contaba con el gran beneplácito de los espectadores, mientras que el
+                    segundo disponía de algunos defensores muy férreos entre la crítica especializada. Cualquiera de los
+                    dos habría sido un justo ganador, pero al final solo podía haber uno.
+                </p>
+                <p class="noticias">
+                    Al final ha sido Larian Studios quien se ha llevado el gato al agua con su obra magna. La decisión
+                    no ha dejado a nadie indiferente, pero tampoco se puede decir que sea inmerecido. De hecho Baldur's
+                    Gate 3 es un auténtico juegazo y está claro que tiene una calidad tremenda. Es uno de los mejores
+                    juegos de rol jamás creados.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mt-5 mb-5">
+    <div class="card-header text-center bg-black">
+        <h3 class="titulo">Mejor Dirección</h3>
+    </div>
+    <div class="container text-center noticias rounded-bottom">
+        <h1 class="p-3" style="color: white;">Alan Wake 2</h1>
+    </div>
+</div>
+<div class="card mt-5 mb-5">
+    <div class="card-header text-center bg-black">
+        <h3 class="titulo">Mejor Narrativa</h3>
+    </div>
+    <div class="container text-center noticias rounded-bottom">
+        <h1 class="p-3" style="color: white;">Alan Wake 2</h1>
+    </div>
+</div>
+<div class="card mt-5 mb-5">
+    <div class="card-header text-center bg-black">
+        <h3 class="titulo">Mejor Dirección Artística</h3>
+    </div>
+    <div class="container text-center noticias rounded-bottom">
+        <h1 class="p-3" style="color: white;">Alan Wake 2</h1>
+    </div>
+</div>
+<div class="card mt-5 mb-5">
+    <div class="card-header text-center bg-black">
+        <h3 class="titulo">Mejor Banda Sonora y Música</h3>
+    </div>
+    <div class="container text-center noticias rounded-bottom">
+        <h1 class="p-3" style="color: white;">Final Fantasy XVI</h1>
+    </div>
+</div>
+<div class="card mt-5 mb-5">
+    <div class="card-header text-center bg-black">
+        <h3 class="titulo">Mejor Diseño de Audio</h3>
+    </div>
+    <div class="container text-center noticias rounded-bottom">
+        <h1 class="p-3" style="color: white;">Hi-Fi Rush</h1>
+    </div>
+</div>
+{% endblock contenido %}

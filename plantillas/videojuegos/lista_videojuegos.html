@@ -1,0 +1,85 @@
+{% extends '_base.html' %}
+
+{% block contenido %}
+<div class="container text-center mb-3 bg-dark p-4">
+    <p class="text-white fs-5">Filtrar por plataforma:</p>
+    <div class="dropdown">
+        <button class="btn btn-light rounded-5 fs-5 fw-bold" style="width: 13%;" onclick="filtrarPorPlataforma('Pc'); deshabilitarBoton()">Pc</button>
+        <button class="btn rounded-5 tags dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #077d07;">Xbox</button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" onclick="filtrarPorPlataforma('Xbox 360')">Xbox 360</a></li>
+            <li><a class="dropdown-item" onclick="filtrarPorPlataforma('Xbox One')">Xbox One</a></li>
+            <li><a class="dropdown-item" onclick="filtrarPorPlataforma('Xbox Series X|S')">Xbox Series X|S</a></li>
+        </ul>
+        <button class="btn rounded-5 tags dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #003791;">PlayStation</button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" onclick="filtrarPorPlataforma('PlayStation 3')">PlayStation 3</a></li>
+            <li><a class="dropdown-item" onclick="filtrarPorPlataforma('PlayStation 4')">PlayStation 4</a></li>
+            <li><a class="dropdown-item" onclick="filtrarPorPlataforma('PlayStation 5')">PlayStation 5</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="row gy-5 text-center">
+    {% for videojuego in lista_videojuegos %}
+    <div id="cartasVideojuegos" class="col-4">
+        <a href="{{ videojuego.get_absolute_url }}" class="nodecoration">
+            <div class="card p-3 cartas rounded-0">
+                {% if videojuego.portada %}
+                <img src="{{ videojuego.portada.url }}" class="border border-5 border-info rounded" alt="{{ videojuego.titulo }}">
+                {% endif %}
+                <div class="card-body">
+                    <h3 class="card-title h3__lista-videojuego">{{ videojuego.titulo }}</h3>
+                    <p class="p__plats text-white">{{ videojuego.plataformas }}</p>
+                    <div class="">
+                        <p class="precio">MXN ${{ videojuego.precio }}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<!-- <div class="container text-center">
+    <div class="row gy-5">
+        {% for videojuego in lista_videojuegos %}
+        <div class="col-4">
+            <a href="{{ videojuego.get_absolute_url }}" class="nodecoration">
+                <div class="card p-3 noticias rounded-0">
+                    {% if videojuego.portada %}
+                    <img src="{{ videojuego.portada.url }}" class="border border-5 border-info rounded" alt="{{ videojuego.titulo }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h3 class="card-title h3__lista-videojuego">{{ videojuego.titulo }}</h3>
+                        <p class="precio">MXN ${{ videojuego.precio }}</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
+{% endblock contenido %}
+
+{% block scripts %}
+<script>
+    function deshabilitarBoton() {
+        var botonClic = document.getElementsByClassName('btn')
+        console.log(botonClic)
+    }
+
+    function filtrarPorPlataforma(plataforma) {
+        var listaVideojuegos = document.getElementsByClassName('p__plats')
+        console.log(listaVideojuegos)
+
+        for (var i = 0; i < listaVideojuegos.length; i++) {
+            var platsVideojuego = listaVideojuegos[i];
+            if (platsVideojuego.textContent.includes(plataforma)) {
+                platsVideojuego.parentElement.parentElement.parentElement.parentElement.style.display = 'block'; // Mostrar el elemento
+            } else {
+                platsVideojuego.parentElement.parentElement.parentElement.parentElement.style.display = 'none'; // Ocultar el elemento
+            }
+        }
+    }
+</script>
+{% endblock scripts %}

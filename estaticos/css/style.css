@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+:root {
+    --cPrimario: #212529;
+    --cSecundario: #0dcaf0;
+}
+
+BODY {
+    margin: 0%;
+    padding-top: 4.5rem;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+FOOTER {
+    background-color: var(--cPrimario);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+a.nodecoration {
+    text-decoration: none !important;
+}
+
+h3.titulo {
+    font-family: 'Silkscreen', sans-serif;
+    color: yellow;
+}
+
+div.noticias {
+    background-color: var(--cPrimario);
+}
+div.cartas {
+    background-color: var(--cPrimario);
+    height: 100%;
+}
+
+p.noticias {
+    color: white;
+    font-size: 20px;
+}
+
+p.precio {
+    color: rgb(0, 255, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button.tags {
+    width: 13%;
+    font-weight: bold;
+    color: white;
+}
+
+.footer__texto {
+    text-align: center;
+    margin: 0 0;
+    color: white;
+    font-size: 18px;
+}
+
+.img__portada {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.h3__lista-videojuego {
+    color: var(--cSecundario)
+}
